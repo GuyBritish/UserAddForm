@@ -19,8 +19,9 @@ function AddUser(props) {
 			return;
 		}
 		const newUser = {
+			id: `${enteredUsername}${enteredAge}`,
 			name: enteredUsername,
-			age: enteredAge,
+			age: +enteredAge,
 		};
 		props.onAddUser(newUser);
 		setEnteredUsername("");
