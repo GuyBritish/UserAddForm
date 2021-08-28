@@ -8,7 +8,7 @@ import styles from "./ErrorModal.module.css";
 function ErrorModal(props) {
 	return (
 		<div>
-			<div className={styles.backdrop} />
+			<div className={styles.backdrop} onClick={props.onDismis} />
 			<Card className={styles.modal}>
 				<header className={styles.header}>
 					<h2> {props.title} </h2>
@@ -19,7 +19,7 @@ function ErrorModal(props) {
 				</div>
 
 				<footer className={styles.actions}>
-					<Button> Okay </Button>
+					<Button onClick={props.onDismis}> Okay </Button>
 				</footer>
 			</Card>
 		</div>

@@ -45,9 +45,19 @@ function AddUser(props) {
 		setEnteredAge(event.target.value);
 	};
 
+	const errorDismisHandler = () => {
+		setError(null);
+	};
+
 	return (
 		<div>
-			{error && <ErrorModal title={error.title} message={error.message} />}
+			{error && (
+				<ErrorModal
+					title={error.title}
+					message={error.message}
+					onDismis={errorDismisHandler}
+				/>
+			)}
 			<Card className={styles.input}>
 				<form onSubmit={submitHandler}>
 					<label htmlFor="username"> Username </label>
